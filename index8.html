@@ -1,0 +1,89 @@
+LOCAL//C:\Users\flipo\Downloads\code-20240720T030117Z-001\code
+
+
+  <head>
+    <title>life path number calculator</title>
+    <link rel="stylesheet" href="src/style.css">
+    </head>
+    <body>
+    <div id="page">
+        Birthday: <br>
+        Month:<input type="number" id="m" value="">
+        Day:<input type="number" id="d" value="">
+        Year:<input type="number" id="y" value="">
+    
+    <p>Click the button to add the date.</p>
+    <p><button onclick="numspl()">Try it</button></p>
+    <p>number array           <div id="output1"></div></p><br>
+    <p>sum of array           <div id="output2"></div></p><br>
+    <p>length of array        <div id="output3"></div></p><br>
+    </div>
+    <script>
+
+function numspl() 
+    {
+        
+        
+        //add form inputs to string    
+        var xs = document.getElementById("m").value;
+        var d = document.getElementById("d").value;
+        var y = document.getElementById("y").value;
+        xs += d + y;
+        
+        //counting the number string
+        const getLength = (number) => {
+        return number.toString().length;
+        }
+    
+        //remove non numeric
+        var xs = xs.replace(/[^0-9.]/g, '');
+        var xs = xs.split("");
+
+        //check length of var.  receive var from loop
+        var l = getLength(xs);
+        
+
+        document.getElementById("output1").innerHTML = xs;
+        
+        if (l > 1) 
+        {
+            //convert text format to number
+            const xn = [];
+            for (let i3 = 0; i3 < xs.length; i3++) {
+            xn.push(Number(xs[i3]));}
+    
+            //add all elements in arrays
+            var sum1 = 0;
+            for (let i1 = 0; i1 < xn.length; i1++ ) {
+            sum1 += xn[i1];}
+            document.getElementById("output2").innerHTML = 'yes long';
+        }
+        
+        document.getElementById("output3").innerHTML = l;        
+    }
+        
+
+    </script>
+    </body>
+
+
+            {
+
+
+
+            // function
+            var fun = 'hello';
+            //function myFunction(a, b) {
+            //Function returns the product of a and b
+            //return a * b;
+            //}
+    
+            // scratch function
+            //let x = myFunction(4, 3);
+            //function myFunction(a, b) {
+            // Function returns the product of a and b
+            //return a * b;
+            //}
+    
+            }
+        //print output

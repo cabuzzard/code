@@ -1,0 +1,78 @@
+<head>
+    <title>life path number calculator</title>
+    <link rel="stylesheet" href="src/style.css">
+    </head>
+    <body>
+    <div id="page">
+        Birthday: <br>
+        Month:<input type="number" id="m" min="1" max="12" value="5">
+        Day:<input type="number" id="d" min="1" max="31" value="31">
+        Year:<input type="number" id="y" min="0000" max="9999" value="1975">
+        <p>Click the button to add the date.</p>
+        <p><button onclick="numspl()">Try it</button></p>   
+        <p>sum first entry            <div id="output1"></div></p><br>
+        </div>
+    <script>
+        
+    function numspl() {
+        var x = document.getElementById("m").value;
+        var d = document.getElementById("d").value;
+        var y = document.getElementById("y").value;
+        x += d + y;
+        
+        let text = "";
+        var i = 10;
+        while (i > 0) {
+        
+        //length of string
+        const getLength = (number) => {
+        return number.toString().length;
+        }
+    
+        //check length of the input
+        linput = getLength(x);
+              
+        //convert text format to array
+        const xn = [];
+        for (let i3 = 0; i3 < x.length; i3++) {
+        xn.push(Number(x[i3]));}
+        //document.write(xn);
+      
+        //add a string to itself
+        var sum1 = 0;
+        for (let i = 0; i < xn.length; i++ ) {
+        sum1 += xn[i];}        
+        
+        var sum2 = 0;
+        for (let i2 = 0; i2 < sum1.length; i2++ ) {
+        sum2 += sum1[i2];}        
+        
+
+        lsum = getLength(sum1);
+        lofs = getLength(sum2);
+        
+        //add the string of numbers from form
+        //var sum1 = 0;
+        //for (let i1 = 0; i1 < xn.length; i1++ ) {
+        //sum1 += xn[i1];}
+        //document.write(sum1);
+
+
+        text += "<br>The input is   " + x 
+        + "  -length of input is   " + linput
+        + "  -array is    " + xn 
+        + "    -sum of array is   " + sum1 
+        + "    -length of sum is   " + lsum 
+        + "    -sum of sum is   " + sum2 
+        + "  -i is   " + i 
+        ;
+        //i = getLength(sum1);
+        i--;
+
+        }
+        
+    document.getElementById("output1").innerHTML = text;
+
+    }
+    </script>
+    </body>

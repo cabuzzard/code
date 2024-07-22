@@ -1,0 +1,89 @@
+<head>
+    <title>life path number calculator</title>
+    <link rel="stylesheet" href="src/style.css">
+    </head>
+    <body>
+    <div id="page">
+        Birthday: <br>
+        Month:<input type="number" id="m" min="1" max="12" value="">
+        Day:<input type="number" id="d" min="1" max="31" value="">
+        Year:<input type="number" id="y" min="0000" max="9999" value="">
+    
+    <p>Click the button to add the date.</p>
+    <p><button onclick="numspl()">Try it</button></p>
+    <p>form string            <div id="output1"></div></p><br>
+    <p>number array            <div id="output2"></div></p><br>
+    <p>length of array           <div id="output3"></div></p><br>
+    <p>sum of array       <div id="output4"></div></p><br>
+    <p>length  of sum        <div id="output5"></div></p><br>
+    <p>sum of sum2        <div id="output6"></div></p><br>
+    <p>output        <div id="output7"></div></p><br>
+</div>
+    <script>
+
+function numspl(){
+
+    var xs = document.getElementById("m").value;
+    var d = document.getElementById("d").value;
+    var y = document.getElementById("y").value;
+    xs += d + y;
+
+    //length of string
+    const getLength = (number) => {
+    return number.toString().length;
+    }
+    
+    //check length of the sum of numbers
+    var l = getLength(xs);
+            
+    //make numeric array from string
+    const xn = [];
+    for (let i3 = 0; i3 < xs.length; i3++) {
+    xn.push(Number(xs[i3]));}
+    //document.write(xn);
+      
+    //add an array
+    var sum1 = 0;
+    for (let i1 = 0; i1 < xn.length; i1++ ) {
+    sum1 += xn[i1];}//document.write(sum1);
+
+    //loop sum
+    let text = "";
+    let text2 = "";
+    let i = l;
+    while (i > 1) {
+    //add var - make numeric array from string
+    const xnew = [];
+    for (let i2 = 0; i2 < sum1.length; i2++) {
+    xnew.push(Number(sum1[i2]));}
+    //add an array
+    var sumloop = 0;
+    for (let i1 = 0; i1 < xnew.length; i1++ ) {
+    sumloop += xnew[i1];}
+    //document.write(sum1);
+    //check output
+    //text += "<br>The number is " + sumloop;
+    var text3 = xnew;
+    //add var - make numeric array from string
+    //function loopadd (a){
+    //const xnew = [];
+    //for (let i2 = 0; i2 < a.length; i2++) {
+    //xnew.push(Number(a[i2]));}
+    //}
+    //let loopsum1 = loopadd(sum1);
+    //document.write(xn);
+//modify while
+  i--;
+}
+
+
+document.getElementById("output1").innerHTML = xs;
+document.getElementById("output2").innerHTML = xn;
+document.getElementById("output3").innerHTML = l;
+document.getElementById("output4").innerHTML = sum1;
+document.getElementById("output7").innerHTML = text3;
+          
+}        
+    </script>
+    </body>
+    
